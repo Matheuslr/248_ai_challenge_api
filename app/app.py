@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
 from enum import Enum
@@ -40,7 +40,8 @@ app.add_middleware(
 )
 @app.post("/triage")
 def read_root(body: Body):
-
+    if not settings.openai_api_key:
+        raise HTTPException(status_code=503, detail = 'Missing OpenAI API KEY')
     client = OpenAI(api_key=settings.openai_api_key)
 
     response = client.responses.parse(
@@ -50,4 +51,3 @@ def read_root(body: Body):
     )
 
     return response.output_parsed
-

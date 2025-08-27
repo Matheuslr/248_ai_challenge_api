@@ -1,6 +1,6 @@
 # Message Triage API
 
-A simple API that automatically categorizes messages using OpenAI's language models.
+An API that automatically categorizes messages using OpenAI's language models.
 
 ## Getting Started
 
@@ -25,4 +25,4 @@ The API will be available at `http://localhost:8000`
 
 ## API DOC
 
-[documentation](http://localhost:8000)
+You can find the doc on `/docs` 
