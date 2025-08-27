@@ -18,7 +18,7 @@ Create a `.env` file in the project root using `.env.example` as example:
 ### Run the server
 
 ```bash
-fastapi dev main.py
+fastapi dev app/app.py
 ```
 
 The API will be available at `http://localhost:8000`
